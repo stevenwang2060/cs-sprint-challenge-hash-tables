@@ -4,6 +4,23 @@ def intersection(arrays):
     """
     # Your code here
 
+    # Create cache and result.
+    cache = {}
+    result = []
+
+    # Word count approach.
+    for i in arrays:
+        for j in i:
+            if j in cache:
+                cache[j] += 1
+            else:
+                cache[j] = 1
+
+    # If any x has value of more than 1, it is added to result.
+    for x in cache:
+        if cache[x] > 1:
+            result.append(x)
+
     return result
 
 

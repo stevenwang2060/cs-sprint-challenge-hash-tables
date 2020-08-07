@@ -4,6 +4,21 @@ def has_negatives(a):
     """
     # Your code here
 
+    # Create cache and result.
+    cache = {}
+    result = []
+
+    # Store all integers in the cache.
+    for i in a:
+        if i not in cache:
+            cache[i] = i
+
+    # Look for the counterpart of the integer.
+    for j in cache:
+        if cache[j] < 0 and -cache[j] in cache:
+            print(-cache[j])
+            result.append(abs(cache[j])) # Abs sets the value automatically to postive.
+
     return result
 
 
